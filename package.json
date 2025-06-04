@@ -3,11 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^5.3.6",
     "cra-template-pwa": "2.0.0",
     "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
     "react-scripts": "5.0.1",
-    "recharts": "^2.15.3"
+    "recharts": "^2.15.3",
+    "web-vitals": "^5.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

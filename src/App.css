@@ -85,16 +85,126 @@ h1 {
   }
 }
 
-/* Glassmorphism card style */
-.glass-card {
-  background: rgba(255, 255, 255, 0.25) !important;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+/* Elegant deep blue, purple, and dark red animated gradient background */
+body, .App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #181c2f 0%, #2d1a3a 50%, #3a1a2d 100%);
+  background-size: 400% 400%;
+  animation: gradientBG 18s ease-in-out infinite;
+  color: #e3e6f0;
 }
 
-body, .App {
-  background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%) !important;
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+h1, h2, .card-title, .card-text, label, th, td {
+  color: #e3e6f0 !important;
+}
+
+/* Glassmorphism card style with subtle border and soft background */
+.glass-card {
+  background: rgba(32, 24, 48, 0.82) !important;
+  box-shadow: 0 4px 24px 0 rgba(40, 20, 60, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1.5px solid rgba(120, 80, 180, 0.18);
+  transition: box-shadow 0.3s, border 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.glass-card:hover {
+  box-shadow: 0 0 16px 2px #7c3aed55, 0 4px 24px 0 rgba(40, 20, 60, 0.12);
+  border: 1.5px solid #7c3aed88;
+}
+
+.card-title {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #b69df8 !important;
+}
+
+.card-text {
+  color: #d1c4e9 !important;
+}
+
+/* Bootstrap form overrides for dark mode */
+.form-control {
+  background: rgba(32, 24, 48, 0.92);
+  color: #e3e6f0;
+  border: 1px solid #7c3aed55;
+  border-radius: 8px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+  border: 1.5px solid #b69df8;
+  box-shadow: 0 0 0 2px #b69df844;
+  background: rgba(32, 24, 48, 0.98);
+}
+label {
+  color: #b69df8 !important;
+  font-weight: 500;
+}
+
+/* Table styling for dark mode */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: rgba(32, 24, 48, 0.82);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.summary-table th, .summary-table td {
+  border: 1px solid #2d1a3a;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  color: #e3e6f0;
+}
+.summary-table th {
+  background: rgba(120, 80, 180, 0.12);
+  color: #b69df8;
+}
+
+/* Chart area accent, subtle glow */
+.recharts-wrapper {
+  filter: drop-shadow(0 0 6px #7c3aed44);
+  border-radius: 12px;
+  background: rgba(32, 24, 48, 0.6);
+  padding: 0.5rem;
+}
+
+/* Accent border for main chart, subtle */
+.glass-card .recharts-wrapper {
+  border: 1.5px solid #7c3aed55;
+  box-shadow: 0 0 8px 1px #7c3aed33;
+  border-radius: 12px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Button accent (if any) */
+.btn-primary, .btn-primary:focus, .btn-primary:active {
+  background: linear-gradient(90deg, #7c3aed 0%, #b69df8 100%);
+  border: none;
+  color: #e3e6f0;
+  font-weight: 600;
+  box-shadow: 0 2px 8px #7c3aed33;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #b69df8 0%, #7c3aed 100%);
+  box-shadow: 0 4px 16px #b69df866;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .glass-card {
+    padding: 0.5rem;
+  }
+  .summary-table th, .summary-table td {
+    padding: 0.5rem;
+  }
 }

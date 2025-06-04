@@ -115,7 +115,7 @@ function App() {
           <Card className="glass-card mb-4">
             <Card.Body>
               <Card.Title>Main P&amp;L Chart (Combined)</Card.Title>
-              <PnLChart data={data} breakevenPoints={breakevens} maxLoss={maxLoss} maxGain={maxGain} />
+              <PnLChart data={data} breakevenPoints={breakevens} maxLoss={maxLoss} maxGain={maxGain} spotPrice={values.spotPrice} />
             </Card.Body>
           </Card>
         </Col>
@@ -125,7 +125,7 @@ function App() {
           <Card className="glass-card mb-4">
             <Card.Body>
               <Card.Title>Long Stock + Put Option</Card.Title>
-              <PnLChart data={longLeg} />
+              <PnLChart data={longLeg} spotPrice={values.spotPrice} />
             </Card.Body>
           </Card>
         </Col>
@@ -133,7 +133,7 @@ function App() {
           <Card className="glass-card mb-4">
             <Card.Body>
               <Card.Title>Short Stock + Call Option</Card.Title>
-              <PnLChart data={shortLeg} />
+              <PnLChart data={shortLeg} spotPrice={values.spotPrice} />
             </Card.Body>
           </Card>
         </Col>

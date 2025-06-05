@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Legend, Line, Brush } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, ReferenceLine, Legend, Line} from 'recharts';
 
 function PnLChart({ data, breakevenPoints, maxLoss, maxGain, spotPrice }) {
   const [xDomain, setXDomain] = useState(['auto', 'auto']);
